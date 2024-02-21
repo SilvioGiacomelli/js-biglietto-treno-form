@@ -1,12 +1,22 @@
+
+
 const inputNome = document.querySelector(".inputnome");
 const inputKm = document.querySelector(".inputkm");
-const inputAge = document.querySelector("select-age");
-const testoContenutoInput = ();
-//Bottone Reset//
-reset.addEventListener('click',function(){
-  // resetto il titolo
-  inputnome.innerHTML = testoContenutoInput;
-  // resetto il value dell'input
-  input1.value = '';
+const selectAge = document.querySelector(".select-age");
+const sendButton = document.querySelector(".invia");
+const resetButton = document.querySelector(".reset");
+
+//Bottone Invia//
+sendButton.addEventListener('click',function(){
+  const name = inputNome.value;
+  const km = inputKm.value;
+  const age = selectAge.value;
 })
-console.log()
+
+//Bottone Reset//
+sendButton.addEventListener('click',function(){
+  // resetto il titolo
+  console.log(inputNome.value);
+  // resetto il value dell'input
+  inputNome.value = '';
+})
