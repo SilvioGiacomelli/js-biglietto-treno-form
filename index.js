@@ -11,6 +11,7 @@ sendButton.addEventListener('click',function(){
   const name = inputNome.value;
   const km = inputKm.value;
   const age = selectAge.value;
+  console.log(name,km,age);
 })
 
 //Bottone Reset//
