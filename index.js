@@ -19,7 +19,7 @@ resetButton.addEventListener('click',function(){
   inputNome.value = '';
   inputKm.value = '';
   selectAge.value = '';
-})
+
 
 //Bottone Invia//
 sendButton.addEventListener('click',function(){
@@ -45,6 +45,6 @@ else if(selectAge === anziano) {
 else{
   console.log(prezzoBiglietto);
 }
-
+});
 ////Stampo su HTML
 document.getElementById("prezzoTotale").innerHTML += prezzoBiglietto + " €"; 
