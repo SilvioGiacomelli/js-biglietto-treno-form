@@ -1,17 +1,13 @@
 
 ///Costanti
 const inputNome = document.querySelector(".inputnome");
-const inputKm = document.querySelector(".inputkm");
+let inputKm = document.querySelector(".inputkm");
 let selectAge = document.querySelector(".select-age");
 const sendButton = document.querySelector(".invia");
 const resetButton = document.querySelector(".reset");
-const maggiorenne = document.querySelector(".maggiorenne");
-const minorenne = document.querySelector(".minorenne");
-const anziano = document.querySelector(".anziano");
 const scontoMinorenni = 0.2;
 const scontoAnziani = 0.4;
 const prezzoKm = 0.21;
-let prezzoBiglietto = inputKm * prezzoKm;
 
 //Bottone Reset//
 resetButton.addEventListener('click',function(){
@@ -19,24 +15,25 @@ resetButton.addEventListener('click',function(){
   inputNome.value = '';
   inputKm.value = '';
   selectAge.value = '';
-
-
-//Bottone Invia//
-sendButton.addEventListener('click',function(){
-  const name = inputNome.value;
-  const km = inputKm.value;
-  const age = selectAge.value;
-  console.log(name,km,age);
 })
 
-////Impostare sconto eta minorenne
-if(selectAge === minorenne) {
+//Bottone Invia//
+sendButton.addEventListener('click',function(event){
+  event.preventDefault();
+  const name = inputNome.value;
+  const km = parseFloat(inputKm.value);
+  const age = selectAge.value;
+  console.log(name,km,age);
+  let prezzoBiglietto = inputKm.value * prezzoKm;
+  
+  ////Impostare sconto eta minorenne
+if(selectAge.value == "minorenne") {
   prezzoMinorenni = prezzoBiglietto * scontoMinorenni;
   prezzoBiglietto = prezzoBiglietto - prezzoMinorenni;
   console.log(prezzoBiglietto)
 }
 ////Impostare eta Anziano
-else if(selectAge === anziano) {
+else if(selectAge.value == "anziano") {
   prezzoAnziani = prezzoBiglietto * scontoAnziani;
   prezzoBiglietto = prezzoBiglietto - prezzoAnziani;
   console.log(prezzoBiglietto);
@@ -45,6 +42,6 @@ else if(selectAge === anziano) {
 else{
   console.log(prezzoBiglietto);
 }
-});
 ////Stampo su HTML
 document.getElementById("prezzoTotale").innerHTML += prezzoBiglietto + " €"; 
+});
