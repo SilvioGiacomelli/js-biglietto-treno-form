@@ -43,5 +43,10 @@ else{
   console.log(prezzoBiglietto);
 }
 ////Stampo su HTML
-document.getElementById("prezzoTotale").innerHTML += prezzoBiglietto + " €"; 
+document.getElementById("prezzoTotale").innerHTML = (prezzoBiglietto.toFixed(2)) +" €"; 
+document.getElementById("nome").innerHTML = (inputNome.value);
+document.getElementById("offerta").innerHTML = (selectAge.value);
+document.getElementById("carrozza").innerHTML = Math.floor(Math.random()*11-1);
+document.getElementById("cp").innerHTML = Math.floor(Math.random()*90000+10000);
 });
+
