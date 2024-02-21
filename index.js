@@ -21,7 +21,7 @@ sendButton.addEventListener('click',function(){
   const km = inputKm.value;
   const age = selectAge.value;
   console.log(name,km,age);
-});
+})
 
 //Bottone Reset//
 resetButton.addEventListener('click',function(){
@@ -29,7 +29,7 @@ resetButton.addEventListener('click',function(){
   inputNome.value = '';
   inputKm.value = '';
   selectAge.value = '';
-});
+})
 
 ////Impostare sconto eta minorenne
 if(selectAge = minorenne) {
@@ -46,7 +46,7 @@ else if(selectAge = anziano) {
 ////Impostare eta maggiorenne
 else (selectAge = maggiorenne) {
   console.log(prezzoBiglietto);
-}
+};
 
 ////Stampo su HTML
 document.getElementById("prezzoTotale").innerHTML += prezzoBiglietto + " €"; 
